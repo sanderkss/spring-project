@@ -40,7 +40,7 @@ const mainPageClick = document.querySelector('.menu__link__search');
 const page = document.querySelector('.page__search');
 console.log(page);
   mainPageClick.onclick = () => {
-    if(page.style.top == '15px'){
+    if(page.style.top !== '80px'){
         mainPageClick.className = 'page__button__active';
         page.style.top = '80px';
     } else { 
@@ -57,12 +57,12 @@ const menuBurg = document.querySelector('.menu__burger');
 const headerMenu = document.querySelector('.header__menu');
 
 menuBurg.onclick = () =>{
-    if(headerMenu.style.left == "-100%"){
-        menuBurg.style.margin  = '0 0 0 40%'
-        headerMenu.style.left = "0";
+    if(headerMenu.style.left !== "0px"){
+        menuBurg.style.margin  = '0 0 0 40%';
+        headerMenu.style.left = "0px";
     }else {
         headerMenu.style.left = "-100%";
-        menuBurg.style.margin  = '0px 0px 0px 20px'
+        menuBurg.style.margin  = '0px 0px 0px 20px';
     }
 }
 
