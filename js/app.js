@@ -1,4 +1,4 @@
-document.querySelector('.input__search').oninput = function(){
+const handlerInput = function() {
     let val = this.value.trim().toLowerCase();
     let elasticItems = document.querySelectorAll('.container__title');
     if (val != '' ){
@@ -17,24 +17,10 @@ document.querySelector('.input__search').oninput = function(){
     } 
 }
 
-document.querySelector('.page__input').oninput = function(){
-    let val = this.value.trim().toLowerCase();
-    let elasticItems = document.querySelectorAll('.container__title');
-    if (val != '' ){
-        elasticItems.forEach(elem => {
-            if (elem.innerText.toLowerCase().search(val) == -1){
-                elem.parentNode.classList.add('hide');
-            }
-            else {
-                elem.parentNode.classList.remove('hide');
-                
-            }
-        });
-    } else { 
-         elasticItems.forEach(elem => {
-        elem.parentNode.classList.remove('hide'); });   
-    } 
-}
+document.querySelector('.page__input').oninput = handlerInput;
+document.querySelector('.input__search').oninput = handlerInput;
+
+
 
 const mainPageClick = document.querySelector('.menu__link__search');
 const page = document.querySelector('.page__search');
